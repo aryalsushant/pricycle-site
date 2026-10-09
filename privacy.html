@@ -8,44 +8,84 @@
     <meta name="description" content="PriCycle does not collect any data. There is no account, no server and no analytics. Everything you log stays in an encrypted database on your phone, and the app makes no network requests at all." />
     <style>
     :root {
-      --background: #FFFBF7;
-      --surface: #FFFFFF;
-      --surface-muted: #F6EFE9;
-      --border: #E8DDD5;
-      --text: #2E2A2B;
-      --text-muted: #6B615D;
+      --background: #F3EEE9;
+      --gradient-start: #F6F1EC;
+      --gradient-mid: #F2EDE8;
+      --gradient-end: #ECE8EE;
+      --surface: #FFFCF9;
+      --surface-muted: #ECE5DF;
+      --border: #E2D8D0;
+      --clay-model: slab;
+      --clay-side: #DACABE;
+      --clay-light: rgba(255, 255, 255, 0.9);
+      --clay-dark: rgba(110, 86, 74, 0.2);
+      --clay-inner-light: rgba(255, 255, 255, 1);
+      --clay-inner-dark: rgba(110, 86, 74, 0.12);
+      --blob-pink: #F7CCD9;
+      --blob-blue: #CFE0F5;
+      --blob-yellow: #FAE6BF;
+      --bubble-pink: #F8D2DD;
+      --bubble-pink-icon: #B7355F;
+      --bubble-blue: #D2E2F5;
+      --bubble-blue-icon: #2D6C9F;
+      --bubble-yellow: #F8E7C3;
+      --bubble-yellow-icon: #8E5B00;
+      --text: #3D2F36;
+      --text-muted: #685A61;
       --text-on-accent: #FFFFFF;
-      --accent: #BF5540;
-      --accent-text: #A8462F;
-      --accent-subtle: #FBE9E3;
-      --flow: #B84A44;
-      --flow-spotting: #B4635C;
-      --flow-predicted: #C87461;
-      --fertile: #4E8C7D;
-      --ovulation: #B9762A;
+      --primary: #F5BFD0;
+      --text-on-primary: #3D2F36;
+      --accent: #C93A72;
+      --accent-text: #A92B5E;
+      --accent-subtle: #F9DDE6;
+      --flow: #C8325F;
+      --flow-spotting: #BF4F7C;
+      --flow-predicted: #C55C85;
+      --fertile: #3378AD;
+      --ovulation: #A66A0A;
       --danger: #B3261E;
-      --success: #3C7854;
+      --success: #2A6E4A;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-      --background: #1A1618;
-      --surface: #241F22;
-      --surface-muted: #2E282B;
-      --border: #3D3438;
-      --text: #F4EDE9;
-      --text-muted: #B0A49F;
-      --text-on-accent: #2A1512;
-      --accent: #E08772;
-      --accent-text: #EFA18C;
-      --accent-subtle: #3A2823;
-      --flow: #E27B72;
-      --flow-spotting: #C98782;
-      --flow-predicted: #9A706B;
-      --fertile: #6FBBA8;
-      --ovulation: #E0A458;
-      --danger: #F2A099;
-      --success: #7FC49C;
+      --background: #211A2C;
+      --gradient-start: #2B1C30;
+      --gradient-mid: #231B31;
+      --gradient-end: #1A1F36;
+      --surface: #2E2539;
+      --surface-muted: #382D44;
+      --border: #4A3D57;
+      --clay-model: soft;
+      --clay-side: #241D2C;
+      --clay-light: rgba(255, 255, 255, 0.06);
+      --clay-dark: rgba(0, 0, 0, 0.55);
+      --clay-inner-light: rgba(255, 255, 255, 0.1);
+      --clay-inner-dark: rgba(0, 0, 0, 0.35);
+      --blob-pink: #5A2A4C;
+      --blob-blue: #233F63;
+      --blob-yellow: #4F4026;
+      --bubble-pink: #4E2A46;
+      --bubble-pink-icon: #F7A6C6;
+      --bubble-blue: #22385A;
+      --bubble-blue-icon: #9CCDF4;
+      --bubble-yellow: #4A3C22;
+      --bubble-yellow-icon: #F5CF7A;
+      --text: #FBEFF6;
+      --text-muted: #C8B5CB;
+      --text-on-accent: #3A1229;
+      --primary: #F590B6;
+      --text-on-primary: #3A1229;
+      --accent: #F590B6;
+      --accent-text: #F8A9C8;
+      --accent-subtle: #4C2945;
+      --flow: #F17CA2;
+      --flow-spotting: #DC8CAB;
+      --flow-predicted: #B47B97;
+      --fertile: #7FC2EE;
+      --ovulation: #F0C46C;
+      --danger: #FF9F9F;
+      --success: #8AD6A9;
       }
     }
 
@@ -106,7 +146,7 @@
   <body>
     <header>
       <h1>Privacy Policy</h1>
-      <p class="meta">PriCycle · Last updated 18 September 2026</p>
+      <p class="meta">PriCycle · Last updated 3 October 2026</p>
     </header>
 
     <p class="summary">PriCycle does not collect any data. There is no account, no server and no analytics. Everything you log stays in an encrypted database on your phone, and the app makes no network requests at all.</p>
@@ -116,30 +156,33 @@
     <p>This includes the health information you enter — cycle dates, flow, symptoms, moods, sexual activity and notes — as well as any identifier, device information, location, contact details or usage statistics. None of it is gathered.</p>
     <h2>What the app stores, and where</h2>
     <p>What you log is written to a database on your device, encrypted with SQLCipher. The encryption key is generated on the device and kept in the operating system keychain, never inside the database and never anywhere else.</p>
-    <p>The database is explicitly excluded from iCloud and Android device backups, so your history does not travel off the phone inside a routine backup.</p>
+    <p>The database is explicitly excluded from device backups, including cloud backups, so your history does not travel off the phone inside a routine backup. The encryption key and the app lock are stored so that they stay on this device and are not included in backups either.</p>
     <p>If you turn on the app lock, your PIN is never stored. What is stored is a scrypt hash that can check a PIN but cannot be turned back into one.</p>
+    <p>If you choose to unlock with Face ID, Touch ID or fingerprint, the check is done entirely by your phone’s operating system. PriCycle is only told whether it succeeded; it never receives or stores any biometric data.</p>
     <h2>Analytics, tracking and advertising</h2>
     <p>There are none. The app contains no analytics, crash-reporting, attribution or advertising SDK of any kind, and no third-party code that reports on your use of it.</p>
     <p>Nobody, including the developer, can see what you log, when you open the app, or whether you use it at all.</p>
     <h2>Sharing with third parties</h2>
     <p>Your data is never shared, because it is never collected. There are no third parties with access to it: no processors, no service providers, no analytics vendors and no advertising partners.</p>
     <p>Reminders, if you turn them on, are scheduled and delivered by your own phone. Nothing is registered with a push notification service, and the app works entirely offline.</p>
+    <p>By default a reminder only says that PriCycle has something to check, so nothing about your cycle appears on the lock screen. If you choose to have reminders name the estimate, that text can be read on your lock screen by anyone holding the phone.</p>
     <h2>Exports you create yourself</h2>
     <p>You can ask the app to produce a backup of what you have logged. That file is encrypted with a password you choose and handed to your device share sheet for you to send or save wherever you decide.</p>
     <p>This only ever happens when you ask for it. Once you hand that file to another app or service, where it goes and how it is protected is governed by that service, not by PriCycle. Keep the password safe: without it the backup cannot be opened, and it cannot be recovered.</p>
     <h2>Keeping and deleting your data</h2>
-    <p>Your data is kept on your device for as long as you choose to keep it. You can clear individual days at any time from within the app.</p>
-    <p>Deleting PriCycle removes its database along with it, permanently. Because there is no copy on any server, there is nothing to request the deletion of and nobody to ask — uninstalling the app is a complete deletion.</p>
+    <p>Your data is kept on your device for as long as you choose to keep it. You can clear individual days at any time, or erase everything you have logged from Settings → Erase, without uninstalling the app.</p>
+    <p>Deleting PriCycle removes its database along with it, permanently. Because there is no copy on any server, there is nothing to request the deletion of and nobody to ask. Your phone may keep the app lock and the database key in its keychain after the app is deleted; neither contains any of your health information, and PriCycle clears them if it is installed again. A backup you exported yourself is not affected, because it is wherever you chose to put it.</p>
     <p>For the same reason there is no consent to withdraw, no data to export on request, and no access request to make: you already hold everything there is.</p>
     <h2>Children</h2>
     <p>PriCycle is not directed at children and collects no information from anyone, including children.</p>
     <h2>Not medical advice</h2>
     <p>PriCycle is a record-keeping tool. Its predictions are arithmetic estimates worked out on your device from the cycles you have logged, and are labelled as estimates wherever they appear.</p>
+    <p>The next period is estimated from the cycle length you set in Settings if you set one, otherwise from the average length of your recent logged cycles, or from a typical 28-day cycle until you have logged enough. Ovulation is estimated as 14 days before the next expected period, and the fertile window as the five days before that and the day after. Cycle lengths that look like a logging mistake are left out of the average.</p>
     <p>They are not medical advice, not a diagnosis and not a method of contraception. Talk to a doctor or another qualified clinician about your health, and before making any medical decision.</p>
     <h2>Changes to this policy</h2>
     <p>If this policy changes, the revised version will ship with an app update and the date above will change. Because the app collects nothing, any change here would follow a change in what the app does, not a change in what is done with data already held.</p>
     <h2>Contact</h2>
-    <p>Questions about this policy can be sent to the address published on the app listing.</p>
+    <p>Questions about this policy can be sent to sushantaryal2025@gmail.com, or to the postal address published on the app listing and the support page.</p>
 
     <footer>
       <nav>
